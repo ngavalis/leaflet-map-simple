@@ -32,14 +32,16 @@
     scrollWheelZoom: false
   });
 
-  /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
+
+ /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: '&copy; <a href="https://osm.org/copyright">\
         OpenStreetMap</a> contributors, &copy;\
         <a href="https://carto.com/attribution">CARTO</a>'
-
-
+  }).addTo(map);
+    
+    
   /* Display a point marker with pop-up text */
   L.marker([41.763710, -72.685097]).addTo(map) // EDIT marker coordinates
   .bindPopup("trinity college"); // EDIT pop-up text message
